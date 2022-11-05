@@ -26,7 +26,8 @@ jobs:
       run: make test
  
     - name: HackyFixDartConfiguration
-      "run: sed -i \"s/MemoryCheckCommandOptions:/MemoryCheckCommandOptions: --leak-check=no/g\" DartConfiguration.tcl"
+      run: >
+          sed -i "s/MemoryCheckCommandOptions:/MemoryCheckCommandOptions: --leak-check=no/g" DartConfiguration.tcl
 
     - name: Memcheck
       run: ctest -T memcheck
