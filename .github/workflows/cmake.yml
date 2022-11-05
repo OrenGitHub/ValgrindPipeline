@@ -26,7 +26,7 @@ jobs:
       run: make test
  
     - name: HackyFixDartConfiguration
-      run: sed -i "s/XXXX/YYYY/g" DartConfiguration.tcl
+      run: sed -i "s/XX\:XX/YY\:YY/g" DartConfiguration.tcl
 
     - name: Memcheck
       run: ctest -T memcheck
